@@ -89,11 +89,22 @@ button:focus-visible {
   }
 }
 
-.container {
-  margin: 4px;
+/* margin: 4px;
   position: center;
   background-color: #2e3138;
   border-radius: 8px;
+  width: 100%; */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #2e3138;
 }
 @media (min-width: 640px) {
   .container {

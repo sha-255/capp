@@ -1,6 +1,7 @@
 input {
   border-radius: 8px;
   border-color: #646cff;
+  border-style: solid;
   font-size: 20px;
   line-height: 20px;
   margin-left: 10px;
@@ -9,11 +10,16 @@ input {
 
 .flex-container {
   display: flex;
-  height: 10vh;
-  flex-direction: column;
+}
+
+.max-w {
+  max-width: 20rem;
 }
 
 .text-bold {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: 500;
   margin-left: 15px;
   align-self: start;
