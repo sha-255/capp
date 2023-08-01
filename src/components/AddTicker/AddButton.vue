@@ -1,7 +1,14 @@
 <template>
-  <button><add-svg />Add</button>
+  <button type="button"><plus-svg />Add</button>
 </template>
 
 <script setup>
-import AddSvg from './AddSvg.vue'
+import PlusSvg from './PlusSvg.vue'
 </script>
+
+<style scoped>
+button {
+  display: flex;
+  background-color: #646cff;
+}
+</style>

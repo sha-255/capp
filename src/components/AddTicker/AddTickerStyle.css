@@ -1,17 +1,9 @@
-input {
-  border-radius: 8px;
-  border-color: #646cff;
-  border-style: solid;
-  font-size: 20px;
-  line-height: 20px;
-}
-
 .flex-container {
   display: flex;
 }
 
 .max-w {
-  max-width: 20rem;
+  max-width: 200px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -25,19 +17,6 @@ input {
   align-self: start;
 }
 
-.autocomplete {
-  background-color: #646cff;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  margin: 4px;
-  border-radius: 6px;
-  font-size: 12px;
-  line-height: 16px;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.align-center {
-  align-self: center;
+.margintop {
+  margin-top: 10px;
 }

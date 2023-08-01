@@ -4,42 +4,45 @@
       <div class="max-w">
         <span class="text-bold">Ticker</span>
         <input
+          v-model="model"
           placeholder="For examle DOGE"
-          :value="modelValue"
-          @input="$emit('update:modelValue', $event.target.value)"
+          @keydown.enter="addTicker(model)"
         />
-        <div class="align-center">
-          <span v-for="coin in autocompleteCoins" class="autocomplete">{{
-            coin
-          }}</span>
-        </div>
-        <add-button />
+        <autocomplete-serch v-model="model" />
+        <span v-if="isError" class="error">Ticker can`t be empty</span>
+        <add-button
+          :class="{ margintop: !isError }"
+          @click="addTicker(model)"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
-import { useStore } from 'vuex'
-import autocomplete from './../../use/autocomplete.js'
+import { ref, watch } from 'vue'
 import AddButton from './AddButton.vue'
+import AutocompleteSerch from '../AutocompleteSerch.vue'
 
-const props = defineProps({
-  modelValue: String
-})
-defineEmits(['update:modelValue'])
-const store = useStore()
-const coins = computed(() => {
-  return store.getters.allCoins
-})
-const autocompleteCoins = ref([])
-watch(
-  () => props.modelValue,
-  (newValue) => {
-    autocompleteCoins.value = autocomplete(newValue, coins.value)
+const emit = defineEmits(['add-ticker'])
+const model = ref('')
+
+//How do this normal???
+const isError = ref(false)
+//Why watch not worcked?
+const addTicker = (name) => {
+  model.value = ''
+  if (name === '') {
+    isError.value = true
+    return
   }
-)
+  emit('add-ticker', name)
+}
+watch(model, () => (isError.value = false))
+// watch(
+//   () => addTicker,
+//   () => (model.value = '')
+// )
 </script>
 
 <style scoped>

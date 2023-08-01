@@ -14,7 +14,7 @@ export default createRouter({
       component: () => import('./viewes/HomeView.vue')
     },
     {
-      path: '/coin-list',
+      path: '/coins-list',
       name: 'CoinList',
       component: () => import('./viewes/CoinListView.vue')
     }
