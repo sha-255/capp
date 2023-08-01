@@ -1,34 +1,22 @@
-// const calculateMaxSymbols = (calc, symbols) => {
-//   const calc1 = JSON.parse(JSON.stringify(calc))
-//   const arrStr = calc1.join('').slice(0, symbols)
-//   const res = calc1.map((el, idx) => {
-//     if (!calc1[idx - 1]) return
-//     if (arrStr.includes(calc1[idx - 1])) {
-//       return el
-//     }
-//   })
-//   console.log(res.filter((el) => el !== undefined))
-// }
-
-const calculateMaxSymbols = (calc, symbols) => {
+const CorrectionByWords = (correctionArray, length) => {
   let counter = 0
   let breackIdx = 0
-  calc.forEach((el) => {
+  correctionArray.forEach((el, idx) => {
     const chars = el.split('')
     chars.forEach(() => {
       counter++
-      if (counter === symbols) {
-        breackIdx = calc.indexOf(el)
+      if (counter === length) {
+        breackIdx = idx
       }
     })
   })
-  return calc.slice(0, breackIdx)
+  return correctionArray.slice(0, breackIdx)
 }
 
-export default (filteredBy, filterArray, MAX_SYMBOLS = 18) => {
+export default (filteredBy, filterArray, maxSymbols = 16) => {
   if (!filteredBy) return
-  const correct = filterArray.filter((c) =>
-    c.toLowerCase().includes(filteredBy.toLowerCase())
+  const correct = filterArray.filter((word) =>
+    word.toLowerCase().includes(filteredBy.toLowerCase())
   )
-  return calculateMaxSymbols(correct, MAX_SYMBOLS)
+  return CorrectionByWords(correct, maxSymbols)
 }

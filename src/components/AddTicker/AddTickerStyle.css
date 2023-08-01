@@ -4,8 +4,6 @@ input {
   border-style: solid;
   font-size: 20px;
   line-height: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 .flex-container {
@@ -14,6 +12,9 @@ input {
 
 .max-w {
   max-width: 20rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .text-bold {
@@ -21,7 +22,6 @@ input {
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  margin-left: 15px;
   align-self: start;
 }
 
@@ -29,7 +29,6 @@ input {
   background-color: #646cff;
   cursor: pointer;
   display: inline-flex;
-  align-self: start;
   align-items: center;
   margin: 4px;
   border-radius: 6px;
@@ -37,4 +36,8 @@ input {
   line-height: 16px;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.align-center {
+  align-self: center;
 }

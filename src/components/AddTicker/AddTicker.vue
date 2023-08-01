@@ -8,11 +8,12 @@
           :value="modelValue"
           @input="$emit('update:modelValue', $event.target.value)"
         />
-        <div>
+        <div class="align-center">
           <span v-for="coin in autocompleteCoins" class="autocomplete">{{
             coin
           }}</span>
         </div>
+        <add-button />
       </div>
     </div>
   </section>
@@ -22,6 +23,7 @@
 import { ref, computed, watch } from 'vue'
 import { useStore } from 'vuex'
 import autocomplete from './../../use/autocomplete.js'
+import AddButton from './AddButton.vue'
 
 const props = defineProps({
   modelValue: String
