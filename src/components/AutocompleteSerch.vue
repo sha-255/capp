@@ -3,7 +3,7 @@
     <span
       v-for="(coin, idx) in autocompleteCoins"
       :key="idx"
-      @click="addTicker(coin)"
+      @click="$emit('push-name', coin)"
       class="autocomplete-item"
       >{{ coin }}</span
     >
@@ -18,6 +18,7 @@ import autocomplete from '../use/autocomplete.js'
 const props = defineProps({
   modelValue: 'String'
 })
+defineEmits(['push-name'])
 
 const store = useStore()
 const coins = computed(() => {

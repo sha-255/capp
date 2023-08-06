@@ -6,13 +6,13 @@
         <input
           v-model="model"
           placeholder="For examle DOGE"
-          @keydown.enter="addTicker(model)"
+          @keydown.enter="addTickerName(model)"
         />
-        <autocomplete-serch v-model="model" />
+        <autocomplete-serch v-model="model" @push-name="addTickerName" />
         <span v-if="isError" class="error">Ticker can`t be empty</span>
         <add-button
           :class="{ margintop: !isError }"
-          @click="addTicker(model)"
+          @click="addTickerName(model)"
         />
       </div>
     </div>
@@ -24,25 +24,19 @@ import { ref, watch } from 'vue'
 import AddButton from './AddButton.vue'
 import AutocompleteSerch from '../AutocompleteSerch.vue'
 
-const emit = defineEmits(['add-ticker'])
+const emit = defineEmits(['push-name'])
 const model = ref('')
 
-//How do this normal???
 const isError = ref(false)
-//Why watch not worcked?
-const addTicker = (name) => {
+const addTickerName = (name) => {
   model.value = ''
   if (name === '') {
     isError.value = true
     return
   }
-  emit('add-ticker', name)
+  emit('push-name', name)
 }
 watch(model, () => (isError.value = false))
-// watch(
-//   () => addTicker,
-//   () => (model.value = '')
-// )
 </script>
 
 <style scoped>

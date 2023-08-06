@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1 class="h">Coins list👎🏿</h1>
-    <routing-button :to="'Home'" class="rb"> Home </routing-button>
+    <h1 class="a-center">Coins list👎🏿</h1>
+    <routing-button :to="'Home'" class="a-center"> Home </routing-button>
     <hr />
     <div>
       <span v-for="(coin, idx) in coins" :key="idx" class="autocomplete-item">{{
@@ -21,12 +21,3 @@ const coins = computed(() => {
   return store.getters.allCoins
 })
 </script>
-
-<style scoped>
-.h {
-  align-self: center;
-}
-.rb {
-  align-self: center;
-}
-</style>
