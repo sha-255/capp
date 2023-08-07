@@ -6,17 +6,17 @@ export default createRouter({
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: () => import('./exeptions/NotFound.vue')
+      component: () => import('./exeptions/not-found.vue')
     },
     {
       path: '/',
       name: 'Home',
-      component: () => import('./viewes/HomeView.vue')
+      component: () => import('./viewes/home-view.vue')
     },
     {
       path: '/coins-list',
       name: 'CoinList',
-      component: () => import('./viewes/CoinListView.vue')
+      component: () => import('./viewes/coin-list-view.vue')
     }
   ]
 })

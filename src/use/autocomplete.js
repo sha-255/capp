@@ -13,7 +13,7 @@ const CorrectionByWords = (correctionArray, length) => {
   return correctionArray.slice(0, breackIdx)
 }
 
-export default (filteredBy, filterArray, maxSymbols = 16) => {
+export function autocomplete(filteredBy, filterArray, maxSymbols = 16) {
   if (!filteredBy) return
   const correct = filterArray.filter((word) =>
     word.toLowerCase().includes(filteredBy.toLowerCase())

@@ -1,7 +1,13 @@
-import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import Router from './router.js'
-import Srore from './store'
+import { createPinia } from 'pinia'
 
-createApp(App).use(Router).use(Srore).mount('#app')
+const pinia = createPinia()
+
+const app = createApp(App)
+
+app.use(Router)
+app.use(pinia)
+
+app.mount('#app')
