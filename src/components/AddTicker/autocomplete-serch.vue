@@ -19,9 +19,9 @@ const props = defineProps({
 })
 defineEmits(['push-name'])
 
-const store = useCoinsStore()
+const coinsStore = useCoinsStore()
 const coins = computed(() => {
-  return store
+  return coinsStore.coinsNames
 })
 
 const autocompleteCoins = ref([])

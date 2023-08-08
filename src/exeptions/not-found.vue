@@ -1,10 +1,8 @@
 <template>
   <div class="container">
     <h1 class="a-center">404 Not found</h1>
-    <routing-button class="a-center" :to="'Home'"> Home </routing-button>
+    <router-link class="a-center" :to="'/'">Return to Home</router-link>
   </div>
 </template>
 
-<script setup>
-import RoutingButton from '../components/routing/routing-button.vue'
-</script>
+<script setup></script>

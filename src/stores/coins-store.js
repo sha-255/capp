@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import { getCoinsNames } from '../api/cryptocompare-api.js'
+import { ref } from 'vue'
 
-const coinsNames = getCoinsNames()
+export const useCoinsStore = defineStore('coins-store', () => {
+  const coinsNames = ref([])
 
-export const useCoinsStore = defineStore('coins-store', {
-  state: async () => {
-    return { coinsNames }
-  }
+  const getCoins = async () => (coinsNames.value = await getCoinsNames())
+
+  return { coinsNames, getCoins }
 })
