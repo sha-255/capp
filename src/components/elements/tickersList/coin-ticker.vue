@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import TrashSvg from '../SVGs/trash-svg.vue'
+import TrashSvg from '../../icons/trash-svg.vue'
 
 const props = defineProps({
   ticker: {

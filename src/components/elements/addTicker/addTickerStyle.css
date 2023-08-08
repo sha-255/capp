@@ -1,0 +1,22 @@
+.flex-container {
+  display: flex;
+}
+
+.max-w {
+  max-width: 200px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.text-bold {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  align-self: start;
+}
+
+.margintop {
+  margin-top: 10px;
+}

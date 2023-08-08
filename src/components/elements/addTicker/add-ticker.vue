@@ -20,8 +20,8 @@
 </template>
 
 <script setup>
-import AddButton from './add-button.vue'
-import AutocompleteSerch from './autocomplete-serch.vue'
+import AddButton from '../../common/add-button.vue'
+import AutocompleteSerch from '../../common/autocomplete-serch.vue'
 
 const emit = defineEmits(['push-name'])
 const model = ref('')

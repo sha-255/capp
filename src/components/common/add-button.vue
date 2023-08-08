@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import PlusSvg from '../SVGs/plus-svg.vue'
+import PlusSvg from '../icons/plus-svg.vue'
 </script>
 
 <style scoped>

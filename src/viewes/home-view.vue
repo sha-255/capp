@@ -9,8 +9,8 @@
 </template>
 
 <script setup>
-import AddTicker from '../components/addTicker/add-ticker.vue'
-import TickersList from '../components/tickersList/tickers-list.vue'
+import AddTicker from '../components/elements/addTicker/add-ticker.vue'
+import TickersList from '../components/elements/tickersList/tickers-list.vue'
 import { useTickersList } from '../use/tickers-list.js'
 
 const { addTickerByName, deleteTicker, tickers } = useTickersList()
